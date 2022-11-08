@@ -2,18 +2,15 @@ package com.learn.oops;
 
 /*Inheritance Example*/
 
-class Employee {
-	Integer baseSalary=50000;
 
-}
 
-public class Dev extends Employee{
+public class Dev extends Employee1{
 	Integer bonus=25000;
-	Integer total=bonus+baseSalary;
+	Integer total=bonus + baseSalary;
 	
 	public static void main(String[] args) {
-		Dev emp1=new Dev();
+		Dev dEmp1=new Dev();
 		
-		System.out.println("emp1 salary : "+emp1.total);
+		System.out.println("dEmp1 salary : "+dEmp1.total);
 	}
 }
