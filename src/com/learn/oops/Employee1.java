@@ -19,4 +19,8 @@ public class Employee1 {
 		Integer total=basesalary+bonus+Incentive;
 		System.out.println("Employee class sEmp1 Salary (incentive) : " + total);;
 	}
+	
+	void working() {
+		System.out.println("Employee is working");
+	}
 }
