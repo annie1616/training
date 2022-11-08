@@ -8,7 +8,13 @@ public class Demo {
 		LocalDate date0= date.plusDays(1);//before date
 		LocalDate date1= date.minusDays(1);//plus current date
 
+		
+	
+		LocalDate t= LocalDate.now();//current time
+
+		
 		System.out.println(date + " " + date0 + " " + date1 );
+		System.out.println(t);
 	}
 
 }
