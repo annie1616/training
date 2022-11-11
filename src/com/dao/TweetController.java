@@ -35,7 +35,7 @@ public class TweetController {
 
 					while (true) {
 						System.out.println(
-								"Choose the options: \n 1.post tweet \n 2.veiw my tweet \n 3.veiw all tweets \n 4.reset password \n 5.log out");
+								"Choose the options: \n 1.post tweet \n 2.veiw my tweet \n 3.veiw all tweets \n 4.veiw all users \n 5.reset password \n 6.log out");
 
 						int loginOptions = Integer.parseInt(sc.nextLine());
 
@@ -68,7 +68,7 @@ public class TweetController {
 								System.out.println("Error Occured . Cannot display the details for " + username);
 						}
 
-						else if (loginOptions == 5) {
+						else if (loginOptions == 6) {
 							boolean logOutStatus = login.logout(username);
 							if (logOutStatus)
 							{
@@ -80,7 +80,7 @@ public class TweetController {
 						}
 						
 						
-						else if(loginOptions==4)
+						else if(loginOptions==5)
 						{
 							System.out.println("Enter password");
 							String resetPassword = sc.nextLine();
@@ -92,6 +92,14 @@ public class TweetController {
 							} else
 								System.out.println("ERROR ! , Password Reset Not Completed .");
 
+						}else if(loginOptions==4)
+						{
+							
+							result = login.veiwAllUsers();
+							if (result) {
+								System.out.println("All Users Are Dispalyed");
+							} else
+								System.out.println("ERROR ! , Users Cannot Be Dispalyed .");
 						}
 					}
 				} else
@@ -115,7 +123,7 @@ public class TweetController {
 				if (result) {
 					System.out.println("Registration Completed .");
 				} else
-					System.out.println("Registration not done. Try again");
+					System.out.println("Existing Account or Registration Not Done. Try again");
 
 			} 
 			
@@ -146,8 +154,9 @@ public class TweetController {
 				System.out.println("Thank You for visiting !");
 				break;
 			}
-
+		
 		}
+
 	}
 
 }

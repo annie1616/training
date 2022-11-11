@@ -3,7 +3,9 @@ package com.test;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.sql.Connection;
+import junit.framework.*;
 
+import org.junit.Before;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -13,7 +15,7 @@ import com.jdbc.DriverClass;
 
 class RegistrationTest {
 	private static Connection connection=null;
-	@BeforeAll
+	@Before
 	static void init()
 	{
 		try {

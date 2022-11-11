@@ -69,9 +69,7 @@ public class LoginClass {
 				Statement st1 = connection.createStatement();
 				ResultSet resultSet1 = st1.executeQuery("select * from login_table  ");
 
-				while (resultSet1.next()) {
-					System.out.println(resultSet1.getInt("user_id"));
-				}
+				
 
 				loginStatus = true;
 				System.out.println("Login Success");
@@ -137,6 +135,8 @@ public class LoginClass {
 		return tstatus;
 	}
 
+	
+	
 //____________________________________________________________________________________________________________________________
 
 	public static boolean veiwTweetByUserName(String username) {
@@ -169,6 +169,36 @@ public class LoginClass {
 		return tstatus;
 	}
 	// __________________________________________________________________________________________________________________________
+	
+	public static boolean veiwAllUsers() {
+		boolean tstatus = false;
+
+		try {
+			connection = DriverClass.getConnection();
+
+			String query = "select r_username from register";
+
+			Statement st = connection.createStatement();
+			ResultSet resultSet = st.executeQuery(query);
+int i=1;
+			while (resultSet.next()) {
+				String user = resultSet.getString("r_username");
+				
+
+				System.out.println("user name : " + i + " " + user);
+				i++;
+			}
+i=0;
+			tstatus = true;
+
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return tstatus;
+	}
+
 
 	public boolean logout(String username) {
 		boolean status = false;
